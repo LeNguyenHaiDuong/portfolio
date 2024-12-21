@@ -1,0 +1,1015 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Sour Gummy', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: white;
+}
+nav{
+    width: 100%;
+    height: 10vh;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .logo img{
+    margin-left: 20px;
+    width: 100px;
+    filter: drop-shadow(2px 2px 2px black);
+}
+.container .links a{
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    margin: 0 20px;
+    transition: 0.3s linear;
+}
+.links a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    background-color: #10d4f7;
+    height: 3.5px;
+    transition: 0.3s linear;
+}
+.links a:hover::before,
+.links a:hover{
+    color: #10d4f7;
+    width: 100%;
+}
+.container .search i{
+    color: black;
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-right: 20px;
+}
+/* Section Starts */
+section{
+    width: 100%;
+    height: 90vh;
+}
+section .content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .main-content{
+    color: black;
+    max-width: 850px;
+    width: 100%;
+    margin: 0 auto;
+}
+.main-content h1{
+    font-size: clamp(2rem, 1rem + 5vw, 4rem);
+}
+.main-content h2{
+    color: #10d4f7;
+    font-size: clamp(2rem, 1rem + 5vw, 3.5rem);
+}
+.main-content p{
+    text-align: justify; /* Canh đều 2 bên lề */
+    margin-top: 10px;
+    color: #635e5c;
+}
+.main-content .order{
+    display: flex;
+    margin: 20px 10px;
+    width: 100%;
+    justify-content: space-around;
+    min-height: 7vh;
+}
+.order h3{
+    font-size: 1.8rem;
+}
+/* Nút button */
+.order button {
+    min-width: 50%;
+    margin-left: -30px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, #57e6ff 40%, #7bebff);
+    color: white;
+    font-weight: 700;
+    font-size: clamp(1rem, 1.2rem + 0.6vw, 2rem);
+    transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Nút button khi hover */
+.order button:hover {
+    box-shadow: 0 0 30px #10d4f7;
+    background: linear-gradient(to bottom right, #00d9ff, hsl(189, 100%, 50%) 40%);
+    transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Ghi chú nhỏ dưới nút */
+.order .note {
+    font-size: 1.1rem; /* Cỡ chữ có thể điều chỉnh */
+    margin-top: 15px; /* Khoảng cách giữa button và ghi chú */
+    color: black; /* Màu chữ có thể thay đổi */
+}
+
+.content .avatar img {
+    max-width: 450px;
+    width: 100%;
+    transform: rotate(40deg) translateX(900px); /* Vị trí và góc xoay ban đầu */
+    filter: drop-shadow(6px -5px 10px rgba(0, 0, 0, 0.322));; /* Ban đầu không mờ */
+}
+.content .avatar:hover {
+    filter: drop-shadow(12px -10px 20px rgba(0, 0, 0, 0.521));
+    transition: 0.6s filter ease;
+}
+
+
+@media (max-width:800px){
+    .content{
+        display: flex;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+    .main-content{
+        margin: 0 10px;
+    }
+}
+@media (min-width:884px){
+    .content .avatar img{
+        min-width: 500px;
+    }
+}
+@media (max-width:440px){
+    .links{
+        display: none;
+    }
+    .content .avatar img{
+        width: 100%;
+        margin-right: none;
+    }
+}
+
+
+.background {
+    position: absolute;
+    z-index: 0; /* Đảm bảo nằm dưới nội dung */
+    top: 0;
+    left: 0;
+    top: 10vh;
+    width: 100%; /* Chiếm 60% màn hình */
+    height: 90vh; /* Chiều cao toàn màn hình */
+    background-size: cover; /* Để ảnh phủ kín khung */
+    background-position: center; /* Căn giữa ảnh */
+}
+
+
+@keyframes blur-background {
+    from {
+        filter: blur(0px)
+    }
+    to {
+        filter: blur(2.5px);
+    }
+}
+.background.blur {
+    animation: blur-background 1s ease-in-out forwards;
+}
+
+
+
+.rounded-box {
+    background: rgba(255, 255, 255, 0.712); /* Màu nền trắng đục */
+    border-radius: 40px; /* Bo góc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.411); /* Đổ bóng */
+    backdrop-filter: blur(20px);
+    padding: 20px; /* Khoảng cách bên trong */
+    margin: 15px 20px; /* Căn giữa và tạo khoảng cách */
+    width: 80%; /* Kích thước khung */
+    max-width: 950px; /* Giới hạn chiều rộng tối đa */
+    position: relative;
+    z-index: 1; /* Đặt thấp hơn `main-content` */
+    transition: background 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+
+    animation-duration: 2s; /* Thời gian chạy animation */
+    animation-fill-mode: forwards; /* Giữ trạng thái cuối cùng */
+}
+.rounded-box:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.521); /* Đổ bóng */
+    background: rgba(255, 255, 255, 0.822); /* Màu nền trắng đục */
+}
+
+
+@keyframes move-animation-0 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animation-0 {
+    animation-name: move-animation-0;
+    animation-delay: 0s;
+}
+
+
+
+
+
+.technical{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    margin: 20px 10px;
+    width: 100%;
+    justify-content: space-around;
+    min-height: 7vh;
+    
+}
+.technical h3{
+    font-size: 1.8rem;
+}
+/* Nút button */
+.technical button {
+    position: absolute;
+    z-index: 2; /* Đặt thấp hơn `main-content` */
+    opacity: 0;
+
+    transform: translateX(-50%);
+
+    width: 20vw; /* Chiều rộng cố định */
+    height: 8vh; /* Chiều cao cố định */
+    background: rgba(255, 255, 255, 0.87); /* Màu nền trắng đục */
+    border-radius: 40px; /* Bo góc */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.411); /* Đổ bóng */
+    padding: 10px; /* Khoảng cách bên trong */
+    margin: 15px auto; /* Căn giữa và tạo khoảng cách */
+    color: #10d4f7;
+    font-weight: 700;
+    font-size: 1.6rem; /* Kích thước chữ cố định */
+    transition: background 0.8s ease-in-out, box-shadow 0.8s ease-in-out, color 0.8s ease-in-out;
+}
+
+/* Nút button khi hover */
+.technical button:hover {
+    transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+    color: white;
+    box-shadow: 0 0 30px #10d4f7;
+    background: linear-gradient(to bottom right, #00d9ff, hsl(189, 100%, 50%) 40%);
+}
+
+.technical button.animation-1 {
+    animation-delay: 1s !important;
+    animation: move-animation-1 1s ease-in-out forwards; /* Hiệu ứng di chuyển */
+}
+
+@keyframes move-animation-1 {
+    from {
+        transform: translateX(-50vw) translateY(-25vh);
+    }
+    to {
+        transform: translateX(-31vw) translateY(-25vh);
+        opacity: 1;
+    }
+}
+
+.technical button.animation-2 {
+    animation-delay: 1.4s !important;
+    animation: move-animation-2 1s ease-in-out forwards; /* Hiệu ứng di chuyển */
+}
+
+
+/* Animation 2 */
+@keyframes move-animation-2 {
+    from {
+        transform: translateX(-50vw) translateY(0vh);
+    }
+    to {
+        transform: translateX(-35vw) translateY(0vh);
+        opacity: 1;
+    }
+}
+
+.technical button.animation-3 {
+    animation-delay: 1.8s !important;
+    animation: move-animation-3 1s ease-in-out forwards; /* Hiệu ứng di chuyển */
+}
+
+/* Animation 3 */
+@keyframes move-animation-3 {
+    from {
+        transform: translateX(-50vw) translateY(25vh);
+    }
+    to {
+        transform: translateX(-31vw) translateY(25vh);
+        opacity: 1;
+    }
+}
+
+
+.technical button.animation-4 {
+    animation-delay: 2.2s !important;
+    animation: move-animation-4 1s ease-in-out forwards; /* Hiệu ứng di chuyển */
+}
+
+
+/* Animation 4 */
+@keyframes move-animation-4 {
+    from {
+        transform: translateX(50vw) translateY(-25vh);
+    }
+    to {
+        transform: translateX(31vw) translateY(-25vh);
+        opacity: 1;
+    }
+}
+
+.technical button.animation-5 {
+    animation-delay: 2.6s !important;
+    animation: move-animation-5 1s ease-in-out forwards; /* Hiệu ứng di chuyển */
+}
+
+/* Animation 5 */
+@keyframes move-animation-5 {
+    from {
+        transform: translateX(50vw) translateY(0vh);
+    }
+    to {
+        transform: translateX(35vw) translateY(0vh);
+        opacity: 1;
+    }
+}
+
+
+.technical button.animation-6 {
+    animation-delay: 3s !important;
+    animation: move-animation-6 1s ease-in-out forwards; /* Hiệu ứng di chuyển */
+}
+
+/* Animation 6 */
+@keyframes move-animation-6 {
+    from {
+        transform: translateX(50vw) translateY(25vh);
+    }
+    to {
+        transform: translateX(31vw) translateY(25vh);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes zoom-in-effect {
+    from {
+        transform: scale(0.6);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+    gap: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.card-container .technical-card {    
+    width: 170px;
+    background: white;
+    border: 5px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+
+.card-container .technical-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-container .technical-card p {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.card-container .technical-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+.slider{
+    top: 40vh;
+    display: flex;
+    width: 40vw;
+    height: 40vh;
+    justify-content: center;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+}
+.slider .list{
+    display: flex;
+    justify-content: center;
+    top: 3vh;
+    width: 40vw;
+    min-width: calc(170px * var(--quantity));
+    position: relative;
+}
+.slider .list .item{
+    width: 170px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    text-align: center;
+    position: absolute;
+    left: 100%;
+    animation: 
+        autoRun 13s linear infinite,
+        opacityChange 13s linear infinite !important;
+    transition: 
+        background 1s ease, 
+        filter 1s ease, 
+        opacity 1s ease, 
+        box-shadow 1s ease;
+    animation-delay: calc( (13s / var(--quantity)) * (var(--position) - 1) - 10s) !important;
+    transform-origin: center; /* Đặt trục xoay */
+}
+.slider .list .item img{
+    padding: 5px;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+.slider .list .item p {
+    margin: 0;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+@keyframes autoRun {
+    0% {
+        left: 100%;
+        opacity: 0.5 !important; /* Mờ khi ở ngoài cùng bên phải */
+    }
+    100% {
+        left: -170px;
+        opacity: 0.5 !important; /* Mờ khi đi ra ngoài cùng bên trái */
+    }
+}
+@keyframes opacityChange {
+    0% {
+        opacity: 0.1;
+        transform: translateZ(0) scale(1) rotateX(-25deg) rotateY(40deg);
+    }
+    30% {
+        opacity: 0.7;
+        transform: translateY(43px) translateZ(400px) scale(1.05) rotateX(-10deg) rotateY(15deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(53px) translateZ(1000px) scale(1.1);
+    }
+    70% {
+        opacity: 0.7;
+        transform: translateY(43px) translateZ(400px) scale(1.05) rotateX(-10deg) rotateY(-15deg);
+    }
+    100% {
+        opacity: 0.1;
+        transform: translateZ(0) scale(1) rotateX(-25deg) rotateY(-40deg);
+    }
+}
+
+.slider.hovering .item:not(:hover) {
+    animation-play-state: paused !important;
+    filter: grayscale(1);
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.842);
+}
+.slider .list .item:hover{
+    animation-play-state: paused !important;
+    filter: grayscale(0);
+    opacity: 1 !important;
+    box-shadow: 0 10px 14px rgba(255, 255, 255, 0.842);
+    background: rgb(255, 255, 255);
+}
+
+
+
+
+.glass {
+    position: absolute;
+    z-index: 1;
+    top: 16.5vh;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.808),
+        #80ececb2
+    );
+    height: 80vh;
+    width: 94vw;
+    border-radius: 40px;
+
+    /* Ban đầu thu hẹp ở giữa */
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: expand-from-center 1.2s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+/* Animation mở rộng từ giữa */
+@keyframes expand-from-center {
+    0% {
+        transform: scaleX(0); /* Bắt đầu từ 0% chiều rộng */
+    }
+    100% {
+        transform: scaleX(1); /* Hoàn thiện chiều rộng */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.main-content .projects {
+    top: 40vh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    
+    padding: 20px; /* Thêm padding để nội dung không sát biên */
+}
+
+
+.projects .list {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 0;
+    animation: listExpand 5.8s forwards;
+}
+
+/* Hiệu ứng mở rộng cho cả 2 bên */
+@keyframes listExpand {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+.projects .list .left, .projects .list .right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;  /* Tạo khoảng cách giữa các item */
+    opacity: 0;
+    transform-origin: center;
+}
+
+/* Áp dụng hiệu ứng expand cho phần bên trái */
+.projects .list .left {
+    animation: expandLeft 1.5s forwards;
+    animation-delay: 2.7s;  /* Delay cho hiệu ứng của bên trái */
+}
+
+/* Áp dụng hiệu ứng expand cho phần bên phải */
+.projects .list .right {
+    animation: expandRight 1.5s forwards;
+    animation-delay: 3.5s;  /* Delay cho hiệu ứng của bên phải */
+}
+
+/* Hiệu ứng mở rộng riêng biệt cho bên trái */
+@keyframes expandLeft {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+/* Hiệu ứng mở rộng riêng biệt cho bên phải */
+@keyframes expandRight {
+    0% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.projects .list .item {
+    width: 230px; /* Tăng chiều ngang gấp rưỡi */
+    height: 280px; /* Tăng chiều cao để chứa thêm phần mô tả */
+    background: linear-gradient(
+        180deg,
+        rgb(255, 255, 255),
+        #ffffff81
+    );
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Sắp xếp các thành phần trong card theo chiều dọc */
+    justify-content: flex-start; /* Căn nội dung lên trên */
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+    transition: box-shadow 0.3s ease; 
+}
+
+
+
+
+/* Thêm phần nền trắng */
+.projects .list .item::before {
+    content: ''; /* Không có nội dung */
+    position: absolute; /* Đặt vào vị trí tuyệt đối */
+    width: 100%; /* Đảm bảo nền phủ hết chiều rộng */
+    height: 100%; /* Đảm bảo nền phủ hết chiều cao */
+    background-color: white; /* Nền trắng */
+    z-index: -1; /* Đảm bảo nền ở dưới các phần tử khác */
+    opacity: 1;
+    transform: scaleY(0.41);
+    transform-origin: top;
+    transition: transform 0.3s ease-out;
+}
+
+
+
+.projects .list .item img {
+    margin-top: 7px;
+    width: 95%; /* Hình ảnh chiếm 90% chiều rộng card */
+    height: 100px; /* Chiều cao cố định cho hình ảnh */
+    object-fit: contain; /* Bảo đảm hình ảnh không bị méo */
+    border-radius: 4px; /* Bo tròn nhẹ cho hình ảnh */
+}
+
+.projects .list .item h3{
+    text-align: justify; /* Canh đều 2 bên lề */
+    margin-top: 18px;
+    margin-bottom: -3px;
+}
+
+.projects .list .item description {
+    padding: 10px 10px; /* Thêm padding để tạo khoảng cách */
+    font-size: 14px; /* Kích thước chữ nhỏ hơn cho phần mô tả */
+    font-weight: 400;
+    color: #555; /* Màu chữ nhẹ hơn tiêu đề */
+    line-height: 1.5;
+    text-align: justify; /* Canh đều phần mô tả */
+}
+
+
+
+
+.projects button {
+    position: absolute;
+    z-index: 3;
+    bottom: 0vh;
+
+    width: 80%;
+    height: 18%;
+    border-radius: 10px;
+    background: linear-gradient(
+        150deg,
+        #80ecec,
+        #141d1d
+    );
+    
+    color: white;
+    font-size: clamp(0.6rem, 0.9rem + 0.2vw, 1.4rem);
+    font-weight: bold;
+    transform: translateY(7vh);
+}
+
+.projects button:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: inherit; /* Kế thừa nền từ button */
+    border-radius: inherit;
+    z-index: -2; /* Nằm phía dưới nội dung */
+    filter: blur(10px); /* Áp dụng hiệu ứng blur */
+    opacity: 0; /* Ẩn đi mặc định */
+    transition: opacity 0.4s ease; /* Hiệu ứng mượt khi hover */
+}
+
+.projects button:hover:after {
+    opacity: 1; /* Hiển thị khi hover */
+}
+
+
+.projects .list .item:hover::before {
+    transform: scaleY(1);
+}
+
+.projects .list .item:not(:hover)::before {
+    transition-delay: 0.3s;
+}
+
+
+.projects .list .item:hover {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.548); /* Shadow đậm hơn khi hover */
+    animation: remove-overflow 0.5s forwards;
+    animation-delay: 0.3s;
+}
+
+.projects .list .item:not(:hover) {
+    animation: show-overflow 1s forwards;
+}
+
+.projects .list .item:hover button {
+    animation: show-data 0.3s forwards;
+    animation-delay: 0.3s;
+}
+
+.projects .list .item:not(:hover) button {
+    animation: remove-data 0.3s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+    50% {
+        transform: translateY(-2vh);
+    }
+    100% {
+        transform: translateY(2.5vh);
+    }
+}
+
+@keyframes remove-overflow {
+    to {
+        overflow: initial;
+    }
+}
+
+@keyframes remove-data {
+    0% {
+        transform: translateY(2.5vh);
+    }
+    50% {
+        transform: translateY(-2vh);
+    }
+    100% {
+        transform: translateY(7vh);
+    }
+}
+
+@keyframes show-overflow {
+    0% {
+        overflow: initial;
+        pointer-events: none;
+    }
+    50% {
+        overflow: hidden;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.certs {
+    width: calc(var(--quantity) * 230px + (var(--quantity) - 1) * 30px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start; /* Căn trái nội dung của certs */
+    justify-content: flex-start; /* Căn list cùng cạnh trên và trái */
+
+}
+
+.certs .list {
+    display: flex; /* Kích hoạt flexbox */
+    justify-content: space-around; /* Căn chỉnh khoảng cách giữa các item */
+    align-items: center;
+    gap: 30px; /* Khoảng cách giữa các card */
+    flex-wrap: nowrap; /* Không cho phép dòng mới nếu không cần */
+    width: auto; /* Tránh việc width của list bị cố định */
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.certs .list .item {
+    display: flex; /* Cần thiết để kích hoạt flexbox */
+    width: 230px; /* Chiều ngang card */
+    height: 220px; /* Chiều cao card */
+    background: rgba(255, 255, 255, 0.781); /* Nền trắng */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 6px 9px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    text-align: center;
+    flex-direction: column; /* Sắp xếp theo chiều dọc */
+    justify-content: flex-start; /* Căn lên trên */
+    align-items: center; /* Căn giữa nội dung theo chiều ngang */
+    position: relative;
+    transition: 
+        transform 0.3s ease, 
+        box-shadow 0.3s ease, 
+        filter 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.certs .list .item img {
+    padding: 5px;
+    margin-top: 7px;
+    width: 95%; /* Hình ảnh chiếm 90% chiều rộng card */
+    height: 80px; /* Chiều cao cố định cho hình ảnh */
+    object-fit: contain; /* Bảo đảm hình ảnh không bị méo */
+    border-radius: 4px; /* Bo tròn nhẹ cho hình ảnh */
+}
+
+.certs .list .item h3 {
+    text-align: justify;
+    margin-top: 6px;
+    margin-bottom: -3px;
+}
+
+.certs .list .item description {
+    padding: 10px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+.certs .list .item button {
+    position: absolute;
+    z-index: 3;
+    bottom: 0vh;
+
+    width: 160px;
+    height: 18%;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    font-size: clamp(0.6rem, 0.9rem + 0.2vw, 1.4rem);
+    font-weight: bold;
+    transform: translateY(7vh);
+
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+
+
+.certs .list .item:hover {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.548); /* Shadow đậm hơn khi hover */
+    background-color: white;
+    animation: remove-overflow 0.5s forwards;
+}
+
+.certs .list .item:not(:hover) {
+    animation: show-overflow 0.5s forwards;
+}
+
+.certs .list .item:hover button {
+    animation: show-data 0.3s forwards;
+}
+
+.certs .list .item:not(:hover) button {
+    animation: remove-data 0.3s forwards;
+}
+
+
+.certs .list .item button:hover {
+    animation: show-data 0.3s forwards;
+
+}
+
+
+
+.certs .list .item button:after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    background: inherit; /* Kế thừa nền từ button */
+    border-radius: inherit;
+    z-index: -2; /* Nằm phía dưới nội dung */
+    filter: blur(10px); /* Áp dụng hiệu ứng blur */
+    opacity: 0; /* Ẩn đi mặc định */
+    transition: opacity 0.4s ease; /* Hiệu ứng mượt khi hover */
+}
+
+.certs .list .item button:hover:after {
+    opacity: 1; /* Hiển thị khi hover */
+}
+
+
+
+/* Nút chuyển slide */
+.certs .buttons {
+    display: flex;
+    justify-content: center; /* Canh giữa các button */
+    gap: 20px;
+    width: 100%; /* Đảm bảo chiều rộng của .buttons chiếm hết chiều ngang */
+    margin-top: 40px; /* Khoảng cách trên nút, giúp cách xa list */
+    margin-left: auto; /* Canh trái */
+    margin-right: auto; /* Canh phải */
+}
+
+.certs .buttons button {
+    padding: 10px 20px;
+    border: none;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 28px;
+    font-weight: bold;
+    border-radius:90px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+.certs .buttons button:hover {
+    background: rgba(255, 255, 255, 0.582);
+}

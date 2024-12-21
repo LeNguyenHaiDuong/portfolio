@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+</head>
+
+
+<body>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
+
+    <nav>
+        <div class="container">
+            <div class="links">
+                <a href="#INTRODUCTION" class="tab-link" data-tab="tab1">INTRODUCTION</a>
+                <a href="#TECHNICAL" class="tab-link" data-tab="tab2">TECHNICAL</a>
+                <a href="#PROJECTS" class="tab-link" data-tab="tab3">PROJECTS</a>
+                <a href="#CERTIFICATES" class="tab-link" data-tab="tab4">CERTIFICATES</a>
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <section class="tab-section" id="tab1" style="overflow: hidden;"> 
+        <div class="content">
+            <div class="background" style="background-image: url('/background/bg4.jpg'); opacity: 1;"></div>
+            <div class="rounded-box animation-0" style="transform: translateX(50px);">
+                <div class="main-content" style="position: relative; z-index: 2;">
+                    <h1 data-aos="fade-right" data-aos-duration="2000">Le Nguyen Hai Duong</h1>
+                    <h2 data-aos="fade-left" data-aos-duration="2000" data-aos-delay="200">Data Scientist / Engineer</h2>
+                    <h4 data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400">SOMETHING ABOUT ME</h4>
+                    <p data-aos="flip-down" data-aos-duration="2000" data-aos-delay="600">
+                        I am a fresh graduate from HCMUS. With a passion for working with data and discovering valuable insights, I have completed the data science program at this institution, including coursework in artificial intelligence, machine learning, data science, data mining and big data introduction. Utilizing this knowledge, I have undertaken projects in data analysis and predictive modeling, gaining practical experience
+                        in the data science workflow and completing my thesis on data mining. As a newcomer in the job market, I am eager to find a reputable company where I can continue to develop my skills and contribute as a Data intern.
+                    </p>
+                    <div class="order">
+                        <button data-aos="zoom-in-left" data-aos-duration="2000" data-aos-delay="800">DOWNLOAD MY CV</button>
+                        <small class="note" data-aos="zoom-in-left" data-aos-duration="2000" data-aos-delay="800">or Contact me through "xulinhle97@gmail.com"</small>
+                    </div>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="/avatar/ava3.png" data-aos="zoom-in" data-aos-duration="2000">
+            </div>
+        </div>
+
+    </section>
+
+    <section class="tab-section" id="tab2" style="display:none;">
+        <div class="content">
+            <div class="background blur" style="background-image: url('/background/bg15.jpg'); opacity: 1;"></div>
+            
+            <div class="avatar" style="transform: translateY(6vh); animation: zoom-in-effect 1s linear forwards;">
+                <img src="/avatar/ava3.png" data-aos="zoom-in" data-aos-duration="2000">
+            </div>
+            
+            <div class="technical animation-1" style="position: absolute; z-index: 2;">
+                <button class="animation-1" onclick="showCards('Programming Language')">Programming Language</button>
+                <button class="animation-2" onclick="showCards('Analysis Libraries')">Analysis Libraries</button>
+                <button class="animation-3" onclick="showCards('Machine Learning Libraries')">Machine Learning Libraries</button>
+                <button class="animation-4" onclick="showCards('Tools')">Tools</button>
+                <button class="animation-5" onclick="showCards('Big Data Framework')">Big Data Framework</button>
+                <button class="animation-6" onclick="showCards('Research Topic')">Research Topic</button>
+            </div>
+
+            <div class="slider" style="position: absolute; z-index: 2;"></div>
+    
+        </div>
+    </section>
+    
+    
+
+    <section class="tab-section" id="tab3" style="display:none; overflow: hidden;">
+        <div class="content">
+            <div class="background" style="background-image: url('/background/bg26.png'); opacity: 1;"></div>
+
+            <div class="glass"></div>
+
+            <div class="avatar" style="animation: zoom-in-effect 1s linear forwards; position: absolute; z-index: 5;">
+                <img src="/avatar/ava4.png" data-aos="zoom-in" data-aos-duration="2000">
+            </div>    
+
+            <div class="projects" style="position: absolute; z-index: 2; transform: translateX(-6.5vw) translateY(-16.5vh);">
+                <div class="list">
+                    <div class="left">
+
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(-38vw) translateY(-18vh);">
+                            <img src="project/CHUIM.png"></img>
+                            <h3>Data Mining Thesis</h3>
+                            <description>
+                                Research focus on CHUIM in incremental database, then I choose to improve Closedset-Lattice algorithm.
+                            </description>
+                            <button onclick="window.open('https://studenthcmusedu-my.sharepoint.com/:b:/g/personal/20120460_student_hcmus_edu_vn/ERZehkCCqqFGvHLaRzK4oO8BP36_URTGoxDQ_xmudEavqA?e=92MO7h', '_blank')">MORE INFO</button>
+                        </div>
+
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(-23vw) translateY(-18vh);">
+                            <img src="project/GD.png"></img>
+                            <h3>Gradient Descent</h3>
+                            <description>
+                                Exploring GD/GA and some of its applications in machine learning through Linear Regression and PLA.
+                            </description>
+                            <button onclick="window.open('https://github.com/LeNguyenHaiDuong/Gradient-Descent', '_blank')">MORE INFO</button>
+                        </div>
+
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(-38vw) translateY(20vh);">
+                            <img src="project/ROBERTA.png"></img>
+                            <h3>NLP Disaster Tweets</h3>
+                            <description>
+                                Worked with BERT and ROBERT models to predict whether a tweet is about real disaster or not.
+                            </description>
+                            <button onclick="window.open('https://github.com/Tuyet3005/Project-PTDLTM', '_blank')">MORE INFO</button>
+                        </div>
+
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(-23vw) translateY(20vh);">
+                            <img src="project/SENTIMENT.png"></img>
+                            <h3>Stream Sentiment Analyst</h3>
+                            <description>
+                                Building pipeline with MongoDB, Kafka, PySpark. Used nltk for sentiment analysis scope then visualized by Dashapp.
+                            </description>
+                            <button onclick="window.open('https://github.com/Tuyet3005/Tweets-Sentiment-Analysis', '_blank')">MORE INFO</button>
+                        </div>
+
+                    </div>
+                    
+
+                    <div class="right">
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(38vw) translateY(-18vh);">
+                            <img src="project/ARIMA.png"></img>
+                            <h3>Cinema Ticket Sale</h3>
+                            <description>
+                                Explored features relationships on Time Series Dataset. Build ARIMA model to predict sale in the future.
+                            </description>
+                            <button onclick="window.open('https://github.com/LeNguyenHaiDuong/Cinema-Ticket-Sales-Analyst', '_blank')">MORE INFO</button>
+                        </div>
+
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(23vw) translateY(-18vh);">
+                            <img src="project/MAZE.jpg"></img>
+                            <h3>Maze Solving</h3>
+                            <description>
+                                Implemented and visualized pathfinding algorithms DFS, BFS, UCS, GBFS, and A-star to find paths in a maze.
+                            </description>
+                            <button onclick="window.open('https://github.com/LeNguyenHaiDuong/Maze-Solving-Algorithms', '_blank')">MORE INFO</button>
+                        </div>
+
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(38vw) translateY(20vh);">
+                            <img src="project/KIDSHOP.png"></img>
+                            <h3>Kid Store Analysis</h3>
+                            <description>
+                                Crawling data from Shopee Mall. Building data pipeline, creating dashboards, then analyzing which attributes impact sales.
+                            </description>
+                            <button onclick="window.open('https://drive.google.com/file/d/1-6pOSz70E6E5iNihW5He3P-U8H3z7Ftx/view?usp=sharing', '_blank')">MORE INFO</button>
+                        </div>
+
+                        <div class="item" style="position: absolute; z-index: 2; transform: translateX(23vw) translateY(20vh);">
+                            <img src="project/PORTFOLIO.png"></img>
+                            <h3>My Portfolio</h3>
+                            <description>
+                                Using HTML, CSS, and JavaScript to build a portfolio that briefly introduces myself and some of my abilities.
+                            </description>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="tab-section" id="tab4" style="display:none; overflow: hidden;">
+        <div class="content">
+            <div id="dynamicBackground" class="background"></div>
+
+            <div class="certs" style="--quantity: 3">
+                <div class="list" style="--quantity: 3">
+                    <div class="item">
+                        <img src="certificate/IIG.png"></img>
+                        <h3>TOEFL ITP (B1)</h3>
+                        <description>
+                            Provided by IIG in May, 2023 with score 497/699.
+                        </description>
+                        
+                    </div>
+
+                    <div class="item">
+                        <img src="certificate/HCMUS.png"></img>
+                        <h3>Bachelor Degree</h3>
+                        <description>
+                            Data Science at HCMUS (2020 - 2024) with GPA 3.56/4.0
+                        </description>
+                        <button onclick="window.open('https://drive.google.com/file/d/1cTsOSnbm0TUPWTsyvadsK-ZgyEiPu5Xm/view?usp=sharing', '_blank')">TRANSCRIPT</button>
+                    </div>
+
+                    <div class="item">
+                        <img src="certificate/HackerRank.png"></img>
+                        <h3>SQL (Advanced)</h3>
+                        <description>
+                            Topic: Query optimization, data modeling, Indexing, pivots, and window functions in SQL.
+                        </description>
+                        <button onclick="window.open('https://www.hackerrank.com/certificates/c04bf1a4b709', '_blank')">VIEW CERT</button>
+                    </div>
+
+                    <div class="item">
+                        <img src="certificate/HackerRank.png"></img>
+                        <h3>Problem Solving (Inter)</h3>
+                        <description>
+                            Topic: Data Structures (such as HashMaps, Stacks and Queues), Algorithms (Optimal Solutions).
+                        </description>
+                        <button onclick="window.open('https://www.hackerrank.com/certificates/cf4d0856d0d1', '_blank')">VIEW CERT</button>
+                    </div>
+
+                    <div class="item">
+                        <img src="certificate/HackerRank.png"></img>
+                        <h3>Python (Basic)</h3>
+                        <description>
+                            Topic: Scalar Types, Operators, Iteration, Modularity, Objects and Types and Classes
+                        </description>
+                        <button onclick="window.open('https://www.hackerrank.com/certificates/e40b802a4452', '_blank')">VIEW CERT</button>
+                    </div>
+
+                    <div class="item">
+                        <img src="certificate/HackerRank.png"></img>
+                        <h3>Java (Basic)</h3>
+                        <description>
+                            Topic: classes, data structures, inheritance, exception handling, etc.
+                        </description>
+                        <button onclick="window.open('https://www.hackerrank.com/certificates/4452967b32e4', '_blank')">VIEW CERT</button>
+                    </div>
+
+                   
+
+                </div>
+
+                <div class="buttons">
+                    <button class="prev"> < </button>
+                    <button class="next"> > </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script src="app.js"></script>
+
+</body>
+</html>
