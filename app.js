@@ -136,9 +136,9 @@ const totalWidthPerItem = itemWidth + gap; // Tổng chiều rộng của mỗi 
 const backgroundElement = document.getElementById("dynamicBackground");
 
 const imageList = [
-    '/background/morning.jpg', 
-    '/background/afternoon.jpg',
-    '/background/night.jpg'    
+    'background/morning.jpg', 
+    'background/afternoon.jpg',
+    'background/night.jpg'    
 ]; // Thay đổi ảnh nền
 
 // Function: Cập nhật danh sách hiển thị
