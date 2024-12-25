@@ -555,7 +555,7 @@ section .content{
 .glass {
     position: absolute;
     z-index: 1;
-    top: 16.5vh;
+    top: 17.5vh;
 
     background: linear-gradient(
         135deg,
